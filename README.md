@@ -1,7 +1,7 @@
 # Student-Management-System
 **Giới thiệu**
 
-    • Student-Management-System là một hệ thống quản lý sinh viên hoàn chỉnh, cung cấp nhiều tính năng hiện đại giúp quản lý thông tin sinh viên, nhận diện khuôn mặt, chấm trắc nghiệm tự động và tích hợp AI để nâng cao trải nghiệm người dùng. Dự án này hỗ trợ nhiều tính năng như đăng nhập bảo mật, quản lý thông tin sinh viên, chấm điểm trắc nghiệm, và thay đổi mật khẩu.
+    Student-Management-System là một hệ thống quản lý sinh viên hoàn chỉnh, cung cấp nhiều tính năng hiện đại giúp quản lý thông tin sinh viên, nhận diện khuôn mặt, chấm trắc nghiệm tự động và tích hợp AI để nâng cao trải nghiệm người dùng. Dự án này hỗ trợ nhiều tính năng như đăng nhập bảo mật, quản lý thông tin sinh viên, chấm điểm trắc nghiệm, và thay đổi mật khẩu.
 
 **Tính năng chính**
 
