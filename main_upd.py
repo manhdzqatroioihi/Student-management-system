@@ -12,6 +12,7 @@ from chatbox import ChatBoxWindow
 from student_upd import Student
 #
 from face_recognition import Face_Recognition
+from exam_grading_app import ExamGradingApp
 from attendance import Attendance
 from face_recognition import new_tcid
 
@@ -184,7 +185,7 @@ class Face_Recognition_System(Toplevel):
             (file = 'ImageFaceDetect\\tracnghiem.png')
         self.tn_button = Button(self, image = self.tn,
                                   font = ("times new roman", 13, "bold"), relief = FLAT, activebackground = "white"
-                                  , borderwidth = 0, background = "white", cursor = "hand2",)
+                                  , borderwidth = 0, background = "white", cursor = "hand2",command=self.open_grading_app)
 
         self.tn_button.place(x = 43, y = 593)
         # self.click_tn()
@@ -460,6 +461,12 @@ class Face_Recognition_System(Toplevel):
     def face_recognition(self):
         self.new_window = Toplevel(self)
         self.app = Face_Recognition(self.new_window)
+    
+    def open_grading_app(self):
+    # Tạo một cửa sổ mới cho giao diện chấm điểm
+        grading_window = Toplevel(self)  # Không cần dùng tk.
+        app = ExamGradingApp(grading_window)
+
 
     def student_details(self):
         self.new_window = Toplevel(self)
