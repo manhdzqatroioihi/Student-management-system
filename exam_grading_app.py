@@ -15,7 +15,7 @@ class ExamGradingApp:
         self.root.config(bg="#f4f4f4")  # Màu nền cửa sổ
 
         # Tạo nhãn nền (background)
-        self.background_image = Image.open(r"ImageFaceDetect\bg1.png")  # Đường dẫn tới hình nền của bạn
+        self.background_image = Image.open(r"./ImageFaceDetect/bg1.png")  # Đường dẫn tới hình nền của bạn
         self.background_image = self.background_image.resize((1350, 700), Image.Resampling.LANCZOS)  # Thay đổi kích thước ảnh nền
         self.background_tk = ImageTk.PhotoImage(self.background_image)
 
@@ -52,7 +52,7 @@ class ExamGradingApp:
             self.answer_entries.append(entry)
 
         # Nút chọn ảnh
-        self.browse_image_button_image = Image.open(r"ImageFaceDetect\btnChonAnh.png")
+        self.browse_image_button_image = Image.open(r"./ImageFaceDetect/bntChonAnh.png")
         self.browse_image_button_image = self.browse_image_button_image.resize((100, 37), Image.Resampling.LANCZOS)
         self.browse_image_button_tk = ImageTk.PhotoImage(self.browse_image_button_image)
 
@@ -61,7 +61,7 @@ class ExamGradingApp:
 
         # Nút reset
         # Tải ảnh cho nút reset
-        self.reset_button_image = Image.open(r"ImageFaceDetect\register.png")  # Đường dẫn đến ảnh nút Reset
+        self.reset_button_image = Image.open(r"./ImageFaceDetect/register.png")  # Đường dẫn đến ảnh nút Reset
         self.reset_button_image = self.reset_button_image.resize((140, 50), Image.Resampling.LANCZOS)  # Thay đổi kích thước ảnh
         self.reset_button_tk = ImageTk.PhotoImage(self.reset_button_image)
 
@@ -99,6 +99,8 @@ class ExamGradingApp:
             return 2
         elif answer == 'D':
             return 3
+        elif answer == 'E':
+            return 4
         return None  # Trả về None nếu đáp án không hợp lệ
 
     # Hàm chấm điểm bài thi và trả về ảnh kết quả
@@ -198,7 +200,7 @@ class ExamGradingApp:
                 answer = self.answer_entries[i].get()
                 index = self.answer_to_index(answer)
                 if index is None:
-                    messagebox.showerror("Error", f"Đáp án cho câu {i + 1} không hợp lệ! Vui lòng nhập A, B, C hoặc D.")
+                    messagebox.showerror("Error", f"Đáp án cho câu {i + 1} không hợp lệ! Vui lòng nhập A, B, C, D hoặc E.")
                     return
                 answer_key[i] = index
 

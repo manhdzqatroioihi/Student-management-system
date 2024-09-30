@@ -71,7 +71,7 @@ class LoginPage(object):
             messagebox.showerror("Lỗi !!", "Vui lòng nhập đầy đủ thông tin")
         elif (self.varcheck.get() == 1):
             try:
-                conn = mysql.connector.connect(host = 'localhost', user = 'root', password = 'manhdz2k4',
+                conn = mysql.connector.connect(host = 'localhost', user = 'root', password = '123456a@',
                                                database = 'manh',
                                                port = '3306')
                 my_cursor = conn.cursor()
@@ -98,7 +98,7 @@ class LoginPage(object):
                 messagebox.showerror("Lỗi", f"Due To:{str(es)}", parent = self)
         else:
             try:
-                conn = mysql.connector.connect(host = 'localhost', user = 'root', password = 'manhdz2k4',
+                conn = mysql.connector.connect(host = 'localhost', user = 'root', password = '123456a@',
                                                database = 'manh',
                                                port = '3306')
                 my_cursor = conn.cursor()
