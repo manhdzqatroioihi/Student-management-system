@@ -297,7 +297,7 @@ class Student:
         update_photo_btn.place(x=230, y=3)
 
         #Nút xem các ảnh đã chụp của sinh viên
-        show_photo_btn = Button(btn_frame1, text="Xem ảnh", command=self.student_image,
+        show_photo_btn = Button(btn_frame1, text="Xem ảnh",
                                 font=("times new roman", 11, "bold"), bd=0,bg="white",cursor='hand2' ,activebackground='white',
                         width=170,image=self.photobtn2,fg="white",compound="center")
         show_photo_btn.place(x=430, y=3)

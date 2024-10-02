@@ -104,7 +104,7 @@ class StdImage:
     #================Functions=====================
     def insertfiles(self):
         user = str(value_from_student)
-        directory = r"data/"
+        directory = r"./faces"
         file_names = os.listdir(directory)
         name_path = "user." + user + "."
         print(name_path)

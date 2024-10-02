@@ -6,6 +6,7 @@ import time
 import smtplib
 import random
 import PIL.Image
+import webbrowser
 from tkinter import messagebox
 
 from chatbox import ChatBoxWindow
@@ -267,7 +268,7 @@ class Face_Recognition_System(Toplevel):
         self.ex_button = Button(home_frame, image = self.photoimgsv,
                                 font = ("times new roman", 13, "bold"), relief = FLAT, activebackground = "white"
                                 , borderwidth = 0, background = "white", cursor = "hand2", command = self.excel_data)
-        self.ex_button.place(x = 670, y = 310, width = 260, height = 180)
+        self.ex_button.place(x = 695, y = 315, width = 260, height = 180)
 
     def click_manage(self):
         """ opens new frame from where one can go to manage students, employees, departments, course, section
@@ -485,8 +486,7 @@ class Face_Recognition_System(Toplevel):
         self.app = Report(self.new_window)
 
     def excel_data(self):
-        self.new_window = Toplevel(self)
-        self.app = InsertData(self.new_window)
+        webbrowser.open("https://phenikaa-uni.edu.vn/")
 
     def click_exit(self):
         """ Allows user to terminates the program when chosen yes"""
