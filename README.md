@@ -40,3 +40,6 @@ Student-Management-System là một hệ thống quản lý sinh viên hoàn ch�
 **7. Đổi mật khẩu:**
 
 - Người dùng có thể thay đổi mật khẩu thông qua giao diện đổi mật khẩu trong hệ thống.
+
+## Công nghệ sự dụng:
+- Front-end:
