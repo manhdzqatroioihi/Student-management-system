@@ -5,6 +5,7 @@ from PIL import Image
 import mysql.connector
 
 from main_upd import new_print, Face_Recognition_System
+from database_str import Database_str
 
 
 class LoginPage(object):
@@ -59,7 +60,12 @@ class LoginPage(object):
         self.varcheck = IntVar()
         self.checkbtn = CTkCheckBox(self.frame1, variable = self.varcheck, onvalue = 1, offvalue = 0,
                                     text = "Sử dụng tài khoản quản trị")
-        self.checkbtn.grid(row = 4, column = 0, sticky = "w", pady = 20, padx = 35)
+        self.checkbtn.grid(row = 4, column = 0, sticky = "w", pady = 10, padx = 35)
+         # Nhãn thông tin nhóm
+        self.group_info_label = CTkLabel(self.frame1, text="Nhóm 1\n  GVHD : Trịnh Văn Bình\n", 
+                                   text_color="black", font=("Helvetica", 16, "bold"))
+        self.group_info_label.grid(row=5, column=0, pady=10)
+
 
     def print_email(self):
         print(self.var_email.get())
@@ -67,13 +73,19 @@ class LoginPage(object):
 
     # hàm đăng nhập
     def login(self):
+        db_info = Database_str()  # Tạo đối tượng Database_str để lấy thông tin kết nối
+
         if self.username_entry.get() == "" or self.password_entry.get() == "":
             messagebox.showerror("Lỗi !!", "Vui lòng nhập đầy đủ thông tin")
         elif (self.varcheck.get() == 1):
             try:
-                conn = mysql.connector.connect(host = 'localhost', user = 'root', password = '123456a@',
-                                               database = 'manh',
-                                               port = '3306')
+                conn = mysql.connector.connect(
+                    host=db_info.host,
+                    user=db_info.user,
+                    password=db_info.password,
+                    database=db_info.database,
+                    port=db_info.port
+                )
                 my_cursor = conn.cursor()
                 my_cursor.execute("select * from admin where Account=%s and Password=%s", (
                     self.var_email.get(),
@@ -84,23 +96,23 @@ class LoginPage(object):
                     messagebox.showerror("Lỗi", "Sai tên đăng nhập, mật khẩu hoặc quyền đăng nhập")
                 else:
                     new_print(str(0))
-                    # # self.window.destroy()
-                    # # import home
                     self.reset()
                     messagebox.showinfo("Thông báo", "Bạn đã đăng nhập thành công với quyền Admin")
                     self.window.withdraw()
-                    # self.new_window = Toplevel(self.window)       # Tạo cửa con mới (Không cần thiết)
-
                     self.app = Face_Recognition_System(self)
                 conn.commit()
                 conn.close()
             except Exception as es:
-                messagebox.showerror("Lỗi", f"Due To:{str(es)}", parent = self)
+                messagebox.showerror("Lỗi", f"Due To:{str(es)}", parent=self)
         else:
             try:
-                conn = mysql.connector.connect(host = 'localhost', user = 'root', password = '123456a@',
-                                               database = 'manh',
-                                               port = '3306')
+                conn = mysql.connector.connect(
+                    host=db_info.host,
+                    user=db_info.user,
+                    password=db_info.password,
+                    database=db_info.database,
+                    port=db_info.port
+                )
                 my_cursor = conn.cursor()
                 my_cursor.execute("select Teacher_id from teacher where Email=%s and Password=%s", (
                     self.var_email.get(),
@@ -108,13 +120,10 @@ class LoginPage(object):
                 ))
                 row = my_cursor.fetchone()
 
-                # print(row[0])
                 if row == None:
                     messagebox.showerror("Lỗi", "Sai tên đăng nhập hoặc mật khẩu")
                 else:
                     new_print(str(row[0]))
-                    # self.window.destroy()
-                    # import home
                     self.reset()
                     self.window.withdraw()
                     self.new_window = Toplevel(self.window)
@@ -122,7 +131,8 @@ class LoginPage(object):
                 conn.commit()
                 conn.close()
             except Exception as es:
-                messagebox.showerror("Lỗi", f"Due To:{str(es)}", parent = self)
+                messagebox.showerror("Lỗi", f"Due To:{str(es)}", parent=self)
+
 
     # reset thông tin password_tài khoản
     def reset(self):
