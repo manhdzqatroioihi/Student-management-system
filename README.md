@@ -62,9 +62,9 @@ class Database_str:
 4. Chạy ứng dụng bằng cách chạy file LoginPage.py
 # Công nghệ sử dụng
  - Thư viện giao diện người dùng (GUI)
-  + tkinter: Thư viện này là bộ công cụ tiêu chuẩn của Python để tạo giao diện người dùng đồ họa. Nó cung cấp các widget như nút bấm, trường nhập liệu, bảng điều khiển, v.v.
-  + ttk: Là phần mở rộng của tkinter, cung cấp các widget được làm đẹp hơn và giao diện hiện đại hơn so với các widget mặc định.
-  + ImageTk: Đây là phần mở rộng của Pillow để tích hợp hình ảnh vào tkinter.
+    + tkinter: Thư viện này là bộ công cụ tiêu chuẩn của Python để tạo giao diện người dùng đồ họa. Nó cung cấp các widget như nút bấm, trường nhập liệu, bảng điều khiển, v.v.
+    + ttk: Là phần mở rộng của tkinter, cung cấp các widget được làm đẹp hơn và giao diện hiện đại hơn so với các widget mặc định.
+    + ImageTk: Đây là phần mở rộng của Pillow để tích hợp hình ảnh vào tkinter.
  - Python Built-in Libraries
    + os: Thư viện này cung cấp nhiều chức năng liên quan đến hệ điều hành như quản lý tập tin, thư mục, và môi trường hệ thống.
    + pickle: Thư viện này dùng để tuần tự hóa và giải tuần tự hóa các đối tượng Python. Nó rất hữu ích để lưu trữ và tải các đối tượng trong file.
