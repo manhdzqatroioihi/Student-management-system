@@ -41,5 +41,19 @@ Student-Management-System là một hệ thống quản lý sinh viên hoàn ch�
 
 - Người dùng có thể thay đổi mật khẩu thông qua giao diện đổi mật khẩu trong hệ thống.
 
-## Công nghệ sự dụng:
-- Front-end:
+## Hướng dẫn cài đặt
+1. Clone repository: https://github.com/manhdzqatroioihi/Student-Management-System
+2. Cài đặt các gói phụ thuộc: pip install pipreqs
+                              pipreqs /path/to/your/project
+3. Tạo cơ sở dữ liệu bằng cách chạy file face_recognizer (2).sql
+4. Thay password SQL của bạn trong file database_str.py
+```
+class Database_str:
+    def __init__(self):
+        self.host='localhost'
+        self.user='root'
+        self.password='mat khau sql cua ban'
+        self.database='manh'
+        self.port='3306'
+```
+4. Chạy ứng dụng bằng cách chạy file LoginPage.py
